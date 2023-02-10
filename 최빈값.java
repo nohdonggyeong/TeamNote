@@ -1,8 +1,7 @@
 import java.util.*;
 
 class Solution {
-    public int solution(int[] array) {
-        int answer = 0;
+    public void solution(int[] array) {
         HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
         
         for(int el : array){
@@ -15,7 +14,5 @@ class Solution {
         for(Map.Entry<Integer, Integer> entry : entryList){
             System.out.println("key : " + entry.getKey() + ", value : " + entry.getValue());
         }
-        
-        return answer;
     }
 }
