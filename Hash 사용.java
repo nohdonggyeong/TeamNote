@@ -4,6 +4,7 @@ import java.util.HashMap;
 class Solution {
     public int solution(int[] nums) {
             
+        
             // hashset: value를 자바에서 자동으로 임의 지정하며 key에 중복을 배제하고 값을 넣음.
             // hashmap: key와 value를 개발자가 직접 기입하고 키의 중복을 배제함.
             // hash는 키를 이용해서 값을 찾기 때문에 검색 알고리즘에 매우 효율적.
