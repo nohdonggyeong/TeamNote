@@ -15,16 +15,17 @@ class Solution {
             // 단, foreach문에선 arraylist가 더 빠름
         
         
-            // HashSet 예제
+            // HashSet: 중복 없고 검색 빠른 set을 만드는 예제
             int intAnswer = 0;
             HashSet<Integer> hs = new HashSet<>();
-            for(int i =0; i<nums.length;i++) {
+            for(int i =0; i<nums.length; i++) {
                 hs.add(nums[i]);                
             }
-            intAnswer = hs.size();;
+            intAnswer = hs.size();
+            // intAnswer: 중복 없는 set의 요소 수
             
         
-            // HashMap 예제
+            // HashMap: key값의 개수를 함께 저장하는 예제
             String strAnswer = "";
             HashMap<String, Integer> hm = new HashMap<>();
             for (String player : participant) hm.put(player, hm.getOrDefault(player, 0) + 1);
