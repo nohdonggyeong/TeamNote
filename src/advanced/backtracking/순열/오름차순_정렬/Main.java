@@ -1,4 +1,4 @@
-package advanced.backtracking.순열_오름차순_정렬;
+package advanced.backtracking.순열.오름차순_정렬;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

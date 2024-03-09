@@ -1,4 +1,4 @@
-package advanced.backtracking.순열_내림차순_정렬;
+package advanced.backtracking.순열.내림차순_정렬;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
