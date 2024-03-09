@@ -6,7 +6,7 @@
 
 # 알고리즘 선택
 ### advanced
-- 주어지는 문제 내용대로 구현 해야 하고, 시간 제한을 생각하지 않아도 되는 적당한 수의 범위가 입력 조건으로 주어진다. -> [Brute force](src/advanced/bruteforce/)
+- 문제 내용대로 구현 해야 하고, 시간 제한을 생각하지 않아도 되는 적당한 범위가 입력 조건으로 주어진다. -> [Brute force](src/advanced/bruteforce/)
 - 맵, 그래프, 경우의 수에서 완전 탐색까지는 아니더라도 특정 조건을 달성할 때까지 탐색해야 한다. -> [Backtracking](src/advanced/backtracking/)
 - 맵, 그래프, 경우의 수에서 완전하게 탐색(Exhaustive search)해야 한다. -> [DFS(Depth first search)](src/advanced/dfs/)
 - 맵, 그래프에서 단일 출발점에서 단일 도착점까지의 최단거리를 구해야 한다. -> [BFS(Breadth first search)](src/advanced/bfs/)
