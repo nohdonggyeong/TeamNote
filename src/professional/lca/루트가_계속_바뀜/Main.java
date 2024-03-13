@@ -1,4 +1,4 @@
-package professional.lca;
+package professional.lca.루트가_계속_바뀜;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -12,14 +12,18 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 /**
- * boj_11438_LCA_2
+ * boj_15480_LCA와_쿼리
  */
 public class Main {
 	static int N, M;
-	static List<Integer>[] adjList;
+	static List<Integer>[] T;
+	static int r, u, v;
+	
 	static int kMax;
 	static int[][] parent;
 	static int[] depth;
+	
+	static int lcaR, lcaU, lcaV, lca;
 	
 	static void bfs(int root) {
 		Queue<Integer> queue = new LinkedList<Integer>();
@@ -33,7 +37,7 @@ public class Main {
 		int nowSize = 1;
 		while (!queue.isEmpty()) {
 			int now = queue.remove();
-			for (int next : adjList[now]) {
+			for (int next : T[now]) {
 				if (!visited[next]) {
 					visited[next] = true;
 					queue.add(next);
@@ -84,21 +88,19 @@ public class Main {
 			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out))) {
 			StringTokenizer st;
 			StringBuilder sb = new StringBuilder();
-			
 			N = Integer.parseInt(br.readLine());
-			adjList = new ArrayList[N + 1];
+			
+			T = new ArrayList[N + 1];
 			for (int n = 1; n <= N; n++) {
-				adjList[n] = new ArrayList<Integer>();
+				T[n] = new ArrayList<>();
 			}
 			
-			int u, v;
 			for (int n = 1; n < N; n++) {
 				st = new StringTokenizer(br.readLine());
 				u = Integer.parseInt(st.nextToken());
 				v = Integer.parseInt(st.nextToken());
-				
-				adjList[u].add(v);
-				adjList[v].add(u);
+				T[u].add(v);
+				T[v].add(u);
 			}
 			
 			kMax = (int) Math.ceil(Math.log(N) / Math.log(2));
@@ -112,13 +114,24 @@ public class Main {
 			}
 			
 			M = Integer.parseInt(br.readLine());
-			int a, b, lca;
 			for (int m = 0; m < M; m++) {
 				st = new StringTokenizer(br.readLine());
-				a = Integer.parseInt(st.nextToken());
-				b = Integer.parseInt(st.nextToken());
+				r = Integer.parseInt(st.nextToken());
+				u = Integer.parseInt(st.nextToken());
+				v = Integer.parseInt(st.nextToken());
 				
-				lca = lca(a, b);
+				lcaR = lca(u, v);
+				lcaU = lca(r, v);
+				lcaV = lca(r, u);
+				
+				if (depth[lcaR] >= Math.max(depth[lcaU], depth[lcaV])) {
+					lca = lcaR;
+				} else if (depth[lcaU] >= Math.max(depth[lcaR], depth[lcaV])) {
+					lca = lcaU;
+				} else if (depth[lcaV] >= Math.max(depth[lcaR], depth[lcaU])) {
+					lca = lcaV;
+				}
+				
 				sb.append(lca).append("\n");
 			}
 			
