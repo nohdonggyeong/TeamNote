@@ -21,7 +21,6 @@ public class Main {
 	static boolean[] visited;
 	static int total;
 
-
 	static class Next implements Comparable<Next>{
 		int end;
 		int weight;
